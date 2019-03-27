@@ -57,8 +57,9 @@ class StoreUpPay extends Base
         //写入formIds表
         Common::writeFormId($formId, $user_id);
         $openid = Common::getOpenid($user_id);
-//        $money = (floatval(self::getLevelStoreName($up_level_id)->money) - floatval(self::getLevelStoreName($base_level_id)->money)) * 100;
-        $money = 0.01 * 100;
+        $money = (floatval(self::getLevelStoreName($up_level_id)->money) - floatval(self::getLevelStoreName($base_level_id)->money)) * 100;
+
+//        $money = 0.01 * 100;
         //     初始化值对象
         $input = new \WxPayUnifiedOrder();
         //     文档提及的参数规范：商家名称-销售商品类目
